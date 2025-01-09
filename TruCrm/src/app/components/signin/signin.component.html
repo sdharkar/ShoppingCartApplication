@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="title">
+        Login Form
+    </div>
+    <form class="form" (ngSubmit)="onSubmit()">
+        <div class=" user-details">
+
+            <div class="input-box">
+                <span class="details">Username</span>
+                <input type="text" placeholder="Enter Your Username" name="username" id="username"
+                    [(ngModel)]="credentials.username" required>
+            </div>
+            <div class="input-box">
+                <span class="details">Password</span>
+                <input type="password" placeholder="Enter Your Password" name="password" id="password"
+                    [(ngModel)]="credentials.password" required>
+            </div>
+
+        </div>
+        <a style="cursor: pointer; color: rgba(233, 76, 161, 1);" (click)="openDialog()">Forgot Your Password?</a>
+        <div class="button">
+            <input type="submit" (click)="onSubmit()" value="Login">
+        </div>
+    </form>
+</div>

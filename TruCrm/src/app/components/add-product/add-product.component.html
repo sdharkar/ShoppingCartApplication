@@ -1,0 +1,51 @@
+<h2 mat-dialog-title>{{title}}</h2>
+
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <div class="container">
+        <div>
+            <!-- Customer's name -->
+            <div id="image">
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter Product Image Url</mat-label>
+                    <input formControlName="image" matInput placeholder="Enter Product Image Url">
+                </mat-form-field>
+            </div>
+            <div id="name">
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter Product Name</mat-label>
+                    <input formControlName="productName" matInput placeholder="Enter Product Name">
+                </mat-form-field>
+            </div>
+            <div id="category">
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter Product Category</mat-label>
+                    <input formControlName="category" matInput placeholder="Enter Product Category">
+                </mat-form-field>
+            </div>
+            <div id="quantity">
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter Product Quantity</mat-label>
+                    <input formControlName="quantity" matInput placeholder="Enter Product Quantity">
+                </mat-form-field>
+            </div>
+            <div id="price">
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter Product Price</mat-label>
+                    <input formControlName="price" matInput placeholder="Enter Product Price">
+                </mat-form-field>
+            </div>
+            <!-- gender -->
+            <mat-form-field appearance="outline">
+                <mat-label>In KGs?</mat-label>
+                <mat-select formControlName="inKG" placeholder="In KGs">
+                    <mat-option value="yes">Yes</mat-option>
+                    <mat-option value="no">No</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="buttons" mat-dialog-action [align]="'end'">
+        <button style="margin-right: 20px;" mat-raised-button color="warn" mat-dialog-close>Close</button>
+        <button class="save" type="submit" mat-raised-button color="primary">{{button}}</button>
+    </div>
+</form>

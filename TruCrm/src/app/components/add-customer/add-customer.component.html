@@ -1,0 +1,51 @@
+<h2 mat-dialog-title>{{title}}</h2>
+
+<form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+    <div class="container">
+        <div>
+            <div id="name">
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter Your Image</mat-label>
+                    <input formControlName="image" matInput placeholder="Enter Your Image">
+                </mat-form-field>
+            </div>
+            <!-- Customer's name -->
+            <div id="name">
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter Your Full Name</mat-label>
+                    <input formControlName="name" matInput placeholder="Enter Your Full Name">
+                </mat-form-field>
+            </div>
+            <div id="email">
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter Your Email Id</mat-label>
+                    <input formControlName="emailId" matInput placeholder="Enter Your Email Id">
+                </mat-form-field>
+            </div>
+            <div id="mobile">
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter Your Mobile Number</mat-label>
+                    <input formControlName="mobile" matInput placeholder="Enter Your Mobile">
+                </mat-form-field>
+            </div>
+            <div id="address">
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter Your Address</mat-label>
+                    <input formControlName="address" matInput placeholder="Enter Your Address">
+                </mat-form-field>
+            </div>
+            <!-- gender -->
+            <mat-form-field appearance="outline">
+                <mat-label>Verified</mat-label>
+                <mat-select formControlName="verified" placeholder="Category">
+                    <mat-option value="yes">Yes</mat-option>
+                    <mat-option value="no">No</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="buttons" mat-dialog-action [align]="'end'">
+        <button style="margin-right: 20px;" mat-raised-button color="warn" mat-dialog-close>Close</button>
+        <button class="save" type="submit" mat-raised-button color="primary">{{button}}</button>
+    </div>
+</form>

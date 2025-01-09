@@ -1,0 +1,90 @@
+<h1>Order Summary</h1>
+<hr>
+
+<div class="card" *ngIf="this.customerDetails!=null">
+    <div class="card-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="title">
+                        <h3>Customer Details</h3>
+                    </div>
+                </div>
+                <div class="col-md-4">
+
+                </div>
+            </div>
+
+            <div class="table">
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Id</th>
+                        <th>Customer Name</th>
+                        <th>Email Id</th>
+                        <th>Mobile No.</th>
+                        <th>Address</th>
+                        <th>Verified</th>
+                    </tr>
+                    <tr>
+                        <td><img src="../../../assets/images/{{customerDetails.image}}" alt=""></td>
+                        <td>{{customerDetails.id}}</td>
+                        <td>{{customerDetails.name}}</td>
+                        <td>{{customerDetails.emailId}}</td>
+                        <td>{{customerDetails.mobile}}</td>
+                        <td>{{customerDetails.address}}</td>
+                        <td *ngIf="customerDetails.verified"><span class="fa fa-check"></span></td>
+                        <td *ngIf="!customerDetails.verified"><span class="fa fa-times cross"></span></td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+    </div>
+    <hr style="margin-bottom: 2rem; margin-top: 1rem; border-width: 2px; background-color: #222222;">
+    <div class="mt-2">
+        <div class="card-body">
+            <div class="container">
+                <div class="title">
+                    <h3> Product Details</h3>
+                </div>
+                <div class="table">
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th>Product Name</th>
+                            <th>Product Category</th>
+                            <th>Product Quantity (Pcs)</th>
+                            <th>Product Price</th>
+                            <th>In KGs?</th>
+                            <th>Net Price</th>
+                        </tr>
+                        <tr *ngFor="let product of productDetails">
+                            <td><img src="../../../assets/images/{{product.image}}" alt=""></td>
+                            <td>{{product.productName}}</td>
+                            <td>{{product.productCategory}}</td>
+                            <td>{{product.productQuantity}}</td>
+                            <td> <i style="color: #28a745; font-size:15px;">Rs.</i> {{product.productPrice}}</td>
+                            <td *ngIf="!product.inKG"><span class="fa fa-times cross"></span></td>
+                            <td *ngIf="product.inKG"><span class="fa fa-check"></span></td>
+                            <td>{{product.productPrice*product.productQuantity}}</td>
+
+                        </tr>
+
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fare">
+        <h2>Total Fare :
+            <span>Rs.{{totalFare}}</span>
+        </h2>
+    </div>
+
+    <button class="nextBtn" (click)="onPay()">
+        <span style="color: #ffff !important;">Pay Now</span>
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+    </button>

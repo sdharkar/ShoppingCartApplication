@@ -1,0 +1,60 @@
+<h2 mat-dialog-title>Update Order Details</h2>
+
+<form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+    <div class="container">
+        <div>
+            <div id="orderId">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Order Id</mat-label>
+                    <input matInput disabled value={{editData.orderId}} style="color: #000000;">
+                </mat-form-field>
+            </div>
+
+        </div>
+        <div>
+            <div id="product">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Total Product Ordered</mat-label>
+                    <input matInput disabled value={{editData.product.length}} style="color: #000000;">
+                </mat-form-field>
+            </div>
+
+        </div>
+        <div>
+            <div id="totalPrice">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Total Price</mat-label>
+                    <input matInput disabled value={{editData.totalPrice}} style="color: #000000;">
+                </mat-form-field>
+            </div>
+
+        </div>
+        <div>
+            <div id="totalPrice">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Order Date</mat-label>
+                    <input matInput disabled value={{editData.orderDate}} style="color: #000000;">
+                </mat-form-field>
+            </div>
+
+        </div>
+
+        <div>
+            <div id="status">
+                <h4>Order Status</h4>
+                <mat-form-field appearance="fill">
+                    <mat-label>Status</mat-label>
+                    <mat-select formControlName="orderStatus">
+                        <mat-option *ngFor="let status of orderStatus" [value]="status">
+                            {{status}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+    <div class="buttons" mat-dialog-action [align]="'end'">
+        <button style="margin-right: 20px;" mat-raised-button color="warn" mat-dialog-close>Close</button>
+        <button class="save" type="submit" mat-raised-button color="primary">Update Order</button>
+    </div>
+</form>

@@ -1,0 +1,48 @@
+<h1>Customers</h1>
+<hr>
+<div class="card" style="width: 1140px;">
+    <div class="card-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="title">
+                        <button type="button" class="btn" (click)="openDialog()">Add New Customer</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+
+                </div>
+            </div>
+
+            <div class="table">
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Id</th>
+                        <th>Customer Name</th>
+                        <th>Email Id</th>
+                        <th>Mobile No.</th>
+                        <th>Address</th>
+                        <th>Verified</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                    </tr>
+                    <tr *ngFor="let customer of customerDetails">
+                        <td><img src="../../../assets/images/{{customer.image}}" alt=""></td>
+                        <td>{{customer.id}}</td>
+                        <td>{{customer.name}}</td>
+                        <td>{{customer.emailId}}</td>
+                        <td>{{customer.mobile}}</td>
+                        <td>{{customer.address}}</td>
+                        <td *ngIf="customer.verified"><span class="fa fa-check"></span></td>
+                        <td *ngIf="!customer.verified"><span class="fa fa-times cross"></span></td>
+                        <td><a (click)="updateCustomer(customer)"><span class="fa fa-pencil update"></span></a></td>
+                        <td><a (click)="deleteCustomer(customer.id)"><span class="fa fa-trash delete"></span></a></td>
+
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

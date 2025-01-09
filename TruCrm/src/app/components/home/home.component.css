@@ -1,0 +1,49 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+button {
+  margin-right: 2rem;
+}
+
+.content {
+  height: 110vh;
+  width: 100%;
+  margin-top: -7%;
+  background: url('../../../assets/images/image4.jpg');
+  background-position: center right;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.container {
+
+  top: 30%;
+  left: 8%;
+  position: absolute;
+  align-items: center;
+
+}
+
+.container h1 {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: 70px;
+  font-weight: bold;
+
+}
+
+.container p {
+  text-align: center;
+  margin-top: 4rem;
+  background-color: rgb(240, 240, 240);
+  padding: 20px;
+  border-radius: 8px;
+  color: rgb(0, 0, 0);
+  font-size: 1.2rem;
+}
+
+span {
+  display: block;
+  margin-top: 1rem;
+}

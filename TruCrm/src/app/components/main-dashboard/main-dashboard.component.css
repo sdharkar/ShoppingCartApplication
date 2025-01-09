@@ -1,0 +1,134 @@
+.button {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  background: #dc1919;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #de4f4f;
+}
+
+.recent-flex {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: 70% auto;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+
+.card {
+  background: #ffff;
+  border-radius: 8px;
+}
+
+.card-header,
+.card-body {
+  padding: 1rem;
+  color: #fff;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+thead tr {
+
+  border-bottom: 2px solid #f0f0f0;
+}
+
+thead td {
+  font-weight: 700;
+}
+
+td {
+  padding: .5rem 1rem;
+  font-size: .9rem;
+  color: #222;
+}
+
+tbody tr {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+td .status {
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+tr td:last-child {
+  display: flex;
+  align-items: center;
+}
+
+td .status.green {
+  background: rgb(0, 200, 0) !important;
+}
+
+td .status.yellow {
+  background: rgb(0, 119, 255);
+}
+
+td .status.purple {
+  background: purple;
+}
+
+td .status.orange {
+  background: orange;
+}
+
+.card-body .customer {
+  color: #222;
+}
+
+.customer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5rem .5rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+}
+
+.info img {
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.info h4 {
+  font-size: .8rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.info small {
+  font-weight: 600;
+  color: grey;
+}
+
+.contact span {
+  font-size: 1.2rem;
+  display: inline-block;
+  margin-left: 0.4rem;
+  color: #17a2b8;
+}

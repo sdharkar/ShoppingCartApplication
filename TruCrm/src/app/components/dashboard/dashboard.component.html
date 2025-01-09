@@ -1,0 +1,15 @@
+<p>
+    <mat-toolbar>
+        <img src="../../../assets/images/data-science.png"
+            style="height: 40px; width: 40px; margin-top: 0.3rem; margin-right: 1rem;" alt="">
+        <span>TruCrm</span>
+        <span class="example-spacer"></span>
+        <img src="../../../assets/images/man.png"
+            style="height: 40px; width: 40px; margin-top: 0.2rem; margin-right: 0.3rem;" alt="">
+        <mat-label style="font-size: 1rem; margin-right:1rem;">{{username}}</mat-label>
+        <button mat-raised-button color="accent" (click)="logoutUser()">Logout</button>
+
+    </mat-toolbar>
+</p>
+
+<app-home-dashboard></app-home-dashboard>

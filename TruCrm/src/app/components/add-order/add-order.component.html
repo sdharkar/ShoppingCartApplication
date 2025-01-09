@@ -1,0 +1,131 @@
+<h2>Place Your Order</h2>
+
+<div class="container">
+    <div class="form-heading">
+        Order Details
+    </div>
+    <form [formGroup]="customer" (ngSubmit)="onSubmit()">
+        <span class="title" style="margin-top: 2rem;">Customer Details</span>
+        <div class="fields">
+            <div class="input-field">
+                <label for="">Customer Id</label>
+                <input type="text" name="id" id="" placeholder="Enter customer's id" formControlName="id">
+                <div *ngIf="customer.controls['id'].errors?.['required'] && customer.controls['id'].touched"
+                    style="color: rgb(255, 41, 41); font-size: 0.9rem;">
+                    Customer's Id is required.
+                </div>
+            </div>
+        </div>
+        <div class="inputBox">
+            <input type="submit" value="+ Add Customer">
+        </div>
+        <hr style="margin-bottom: 2rem; margin-top: 1rem; border-width: 2px; background-color: #222222;">
+
+        <div class="card" *ngIf="this.customerDetails!=null">
+            <div class="card-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="title">
+                                <h3>Customer Details</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+
+                        </div>
+                    </div>
+
+                    <div class="table">
+                        <table>
+                            <tr>
+                                <th></th>
+                                <th>Id</th>
+                                <th>Customer Name</th>
+                                <th>Email Id</th>
+                                <th>Mobile No.</th>
+                                <th>Address</th>
+                                <th>Verified</th>
+                            </tr>
+                            <tr>
+                                <td><img src="../../../assets/images/{{customerDetails.image}}" alt=""></td>
+                                <td>{{customerDetails.id}}</td>
+                                <td>{{customerDetails.name}}</td>
+                                <td>{{customerDetails.emailId}}</td>
+                                <td>{{customerDetails.mobile}}</td>
+                                <td>{{customerDetails.address}}</td>
+                                <td *ngIf="customerDetails.verified"><span class="fa fa-check"></span></td>
+                                <td *ngIf="!customerDetails.verified"><span class="fa fa-times cross"></span></td>
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <hr *ngIf="this.customerDetails!=null"
+        style="margin-bottom: 2rem; margin-top: 1rem; border-width: 2px; background-color: #222222;">
+
+    <div class="card-body">
+        <div>
+            <form #form="ngForm">
+                <div class="details">
+                    <span class="title">Product Details</span>
+                    <div class="inputBox">
+                        <input type="submit" value="+ Add Product" (click)="addForm()">
+                    </div>
+                    <hr style="margin-bottom: 2rem; margin-top: 1rem; border-width: 1px; background-color: #222222;">
+                    <div class="details" class="form" *ngFor="let obj of dataArray; let i=index">
+                        <div class="fields">
+                            <div class="input-field">
+                                <label for="">Product Name</label>
+                                <!-- <select name="productName{{i}}" [(ngModel)]="obj.productName" class="form-select"
+                                    aria-label="Default select example">
+                                    <option selected>-Select-</option>
+                                    <option *ngFor="let product of productDetails" value="{{product.productName}}">
+                                        {{product.productName}}</option>
+                                </select> -->
+                                <mat-form-field appearance="fill" style="margin-top:10px;">
+                                    <mat-label>-Select-</mat-label>
+                                    <mat-select name="productName{{i}}" [(ngModel)]="obj.productName">
+                                        <mat-option *ngFor="let product of productDetails"
+                                            [value]="product.productName">
+                                            {{product.productName}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <div class="input-field">
+                                <label for="">Quantity</label>
+                                <input type="number" name="productQuantity{{i}}" id="" placeholder="Enter the quantity"
+                                    min="1" required [(ngModel)]="obj.productQuantity">
+
+                                <!-- <div *ngIf="age.errors?.['required'] && age.touched"
+                                        style="color: rgb(255, 41, 41); font-size: 0.9rem;">
+                                        Age is required.
+                                    </div> -->
+                            </div>
+
+                            <div class="input-field" *ngIf="i!=0">
+                                <div class="input-box">
+                                    <input type="submit" value="-" class="remove" (click)="removeForm(i)">
+                                </div>
+                            </div>
+                        </div>
+                        <hr
+                            style="margin-bottom: 2rem; margin-top: 1rem; border-width: 2px; background-color: #222222;">
+                    </div>
+
+                </div>
+                <button class="nextBtn" (click)="productSubmit()">
+                    <span style="color: #ffff !important;">Place Order</span>
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+
+
+</div>

@@ -1,0 +1,40 @@
+<h1>Products</h1>
+<hr>
+<div class="card">
+    <div class="card-body">
+        <div class="container">
+            <div class="title">
+                <button type="button" class="btn" (click)="openDialog()">Add New Product</button>
+            </div>
+            <div class="table">
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Product Name</th>
+                        <th>Product Category</th>
+                        <th>Product Quantity (Pcs)</th>
+                        <th>Product Price</th>
+                        <th>In KGs?</th>
+                        <th>Update</th>
+                        <th>Delete</th>
+                    </tr>
+                    <tr *ngFor="let product of products">
+                        <td><img src="../../../assets/images/{{product.image}}" alt=""></td>
+                        <td>{{product.productName}}</td>
+                        <td>{{product.productCategory}}</td>
+                        <td>{{product.productQuantity}}</td>
+                        <td> <i style="color: #28a745; font-size:15px;">Rs.</i> {{product.productPrice}}</td>
+                        <td *ngIf="!product.inKG"><span class="fa fa-times cross"></span></td>
+                        <td *ngIf="product.inKG"><span class="fa fa-check"></span></td>
+                        <td><a (click)="updateProduct(product)"><span class="fa fa-pencil update"></span></a></td>
+                        <td><a (click)="deleteProduct(product.productName)"><span class="fa fa-trash delete"></span></a>
+                        </td>
+
+                    </tr>
+
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
